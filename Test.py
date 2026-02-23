@@ -1,1 +1,2 @@
-print("testing")
+#!/bin/bash
+echo "testing"
