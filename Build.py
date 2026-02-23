@@ -1,1 +1,2 @@
-print("building")
+#!/bin/bash
+echo "building"
