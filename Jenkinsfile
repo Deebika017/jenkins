@@ -1,21 +1,25 @@
 pipeline {
     agent any
+
     stages {
-        stage('Checkout') {
-            steps {
-                git url: 'https://github.com/Deebika017/jenkins.git',
-                    credentialsId: 'your-pat-credential-id',
-                    branch: 'main'
-            }
-        }
         stage('Build') {
             steps {
-                echo 'Building...'
+                echo "Running Build stage"
+                sh 'python3 Build.py'
             }
         }
+
         stage('Test') {
             steps {
-                echo 'Testing...'
+                echo "Running Test stage"
+                sh 'python3 Test.py'
+            }
+        }
+
+        stage('Deploy') {
+            steps {
+                echo "Running Deploy stage"
+                sh 'python3 Deploy.py'
             }
         }
     }
