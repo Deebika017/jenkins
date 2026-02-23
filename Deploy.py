@@ -1,1 +1,2 @@
-print("deploying")
+#!/bin/bash
+echo "deploying"
