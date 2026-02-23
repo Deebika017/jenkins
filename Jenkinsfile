@@ -1,25 +1,19 @@
 pipeline {
     agent any
-
     stages {
         stage('Build') {
             steps {
-                echo "Running Build stage"
-                sh 'python3 Build.py'
+                sh './Build.sh'
             }
         }
-
         stage('Test') {
             steps {
-                echo "Running Test stage"
-                sh 'python3 Test.py'
+                sh './Test.sh'
             }
         }
-
         stage('Deploy') {
             steps {
-                echo "Running Deploy stage"
-                sh 'python3 Deploy.py'
+                sh './Deploy.sh'
             }
         }
     }
